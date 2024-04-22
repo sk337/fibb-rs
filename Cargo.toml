@@ -1,0 +1,12 @@
+[package]
+name = "fibb-rs"
+version = "0.1.0"
+authors = ["sk337 <me@pk3.zip>"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+cargo_metadata = "0.18.1"
+num-bigint = "0.4.4"
+num-format = "0.4.4"
