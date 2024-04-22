@@ -26,6 +26,8 @@ fn print_help(authors: &[String]) {
     println!("Options:");
     println!("  -h, --help    Display this help message");
     println!("  --json        Output result in JSON format. Time is in nanoseconds");
+    println!("  -s, --short   Only output the result");
+    println!("  -t, --time    Output time");
     println!("");
     println!("Authors:");
     for author in authors {
@@ -57,10 +59,16 @@ fn main() {
 
     let mut n: u64 = 100;
     let mut output_json = false;
-
+    let mut short_output = false;
+    let mut time_only = false;
+    
     for i in 1..args.len() {
         match args[i].as_str() {
             "--json" => output_json = true,
+            "-s" => short_output = true,
+            "--short" => short_output = true,
+            "-t" => time_only = true,
+            "--time" => time_only = true,
             _ => {
                 if let Ok(num) = args[i].parse() {
                     n = num;
@@ -84,6 +92,12 @@ fn main() {
             n
         );
     } else {
-        println!("{}\n{:?}", result, elapsed);
+        if short_output {
+            println!("{}", result);
+        } else if time_only {
+            println!("{:?}", elapsed)
+        } else {
+            println!("{}\n{:?}", result, elapsed);
+        }
     }
 }

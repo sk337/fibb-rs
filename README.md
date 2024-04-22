@@ -1,6 +1,6 @@
 #  fibb-rs
 
-> a simple and *hopefully* fast fibonacci calulator is rust
+> a simple and *hopefully* fast Fibonacci calculator is rust
 
 ## Usage
 
@@ -12,6 +12,8 @@ Usage:
 Options:
   -h, --help    Display this help message
   --json        Output result in JSON format. Time is in nanoseconds
+  -s, --short   Only output the result
+  -t, --time    Output time
 ```
 
 ## Install
