@@ -1,1 +1,5 @@
 /target
+
+# Replit files
+.replit
+replit.nix
